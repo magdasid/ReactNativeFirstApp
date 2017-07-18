@@ -24,6 +24,10 @@ export default class App extends React.Component {
         <View style={styles.content}>
           {this.text()}
         </View>
+        <View style={styles.tabBar}>
+          <View style={[styles.tabBarButton, styles.button1]}/>
+          <View style={[styles.tabBarButton, styles.button2]}/>
+        </View>
       </View>
     );
   }
@@ -31,7 +35,7 @@ export default class App extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1, /* it will take full screen */
+    flex: 1, /* it will take all available screen space */
     backgroundColor: '#fff'
   },
   navBar: {
@@ -43,7 +47,7 @@ const styles = StyleSheet.create({
   navBarButton: {
     color: '#FFFFFF',
     textAlign:'center',
-    width: 64
+    width: 64 /* buttons have width 64, header has flex:1 so that means header will take all space available beetwen buttons */
   },
   navBarHeader: {
     flex: 1,
@@ -56,4 +60,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center'
   },
+  tabBar: {
+    flexDirection: 'row',
+    height: 50
+  },
+  tabBarButton: {
+    flex: 1
+  },
+  button1: {
+    backgroundColor: '#eea9b8'
+  },
+  button2: {
+    backgroundColor: '#cd8c95'
+  }
 });
