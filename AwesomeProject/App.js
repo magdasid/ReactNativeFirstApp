@@ -1,3 +1,4 @@
+import Tabs from './tabs';
 import React, {Component} from 'react';
 import { 
   StyleSheet, 
@@ -16,11 +17,13 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.navBar}>
-          <Text style={styles.navBarButton}>Back</Text>
-          <Text style={styles.navBarHeader}>Awesome App</Text>
-          <Text style={styles.navBarButton}>More</Text>
-        </View>
+        <Tabs>
+          <View style={styles.navBar}>
+            <Text style={styles.navBarButton}>Back</Text>
+            <Text style={styles.navBarHeader}>Awesome App</Text>
+            <Text style={styles.navBarButton}>More</Text>
+          </View>
+        </Tabs>
         <View style={styles.content}>
           {this.text()}
         </View>
